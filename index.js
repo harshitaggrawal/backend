@@ -28,7 +28,7 @@ server.use(cors({ origin: '*' }));
 server.use(express.json());
 
 // // Serve static files from the public directory
-// server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
+server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 
 // API routes
 server.get('/api/hello', (req, res) => {
@@ -45,14 +45,14 @@ server.use('/api', LoginSignup);
 server.use('/api', admin);
 
 // Serve frontend build (for example, React build)
-// server.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-// });
+server.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 
-// server.listen(process.env.PORT_NUMBER, () => {
-//   console.log('Server Started');
-// });
+server.listen(process.env.PORT_NUMBER, () => {
+  console.log('Server Started');
+});
 
 
-// Export server for Vercel
+
 module.exports = server;
