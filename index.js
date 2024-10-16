@@ -49,10 +49,10 @@ server.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
-server.listen(process.env.PORT_NUMBER, () => {
-  console.log('Server Started');
-});
+// server.listen(process.env.PORT_NUMBER, () => {
+//   console.log('Server Started');
+// });
 
 
 // Export server for Vercel
-// module.exports = server;
+module.exports = server;
