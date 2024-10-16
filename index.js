@@ -49,10 +49,8 @@ server.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
-server.listen(process.env.PORT_NUMBER, () => {
-  console.log('Server Started');
+const PORT = process.env.PORT || 3000; // Fallback to 3000 in local development
+server.listen(PORT, () => {
+  console.log(`Server Started on port ${PORT}`);
 });
 
-
-
-module.exports = server;
