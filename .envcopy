@@ -1,9 +1,0 @@
-PORT_NUMBER=8080
-DB_USERNAME=harshit
-DB_PASSWORD=FRw6SiBm1mA4Lspb
-DB_NAME=game
-PUBLIC_DIR=build
-JWT_SECRET=d741a8e55d47e0939ba40b7a8ad34356e8c59d84d93f3c74f520e9638b4d7b11c2b9a0a8b5d60a9283b3b5b4a78e1b39d7b6e0836c6127ac16debaed2a019a77
-DB_URL=mongodb+srv://harshitaggrawal804:FRw6SiBm1mA4Lspb@harshit.mq1fl.mongodb.net/game?retryWrites=true&w=majority&appName=Harshit
-
-# DB_URL=mongodb://127.0.0.1:27017/game

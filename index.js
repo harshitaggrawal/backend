@@ -2,8 +2,8 @@ const express = require('express');
 const server = express();
 require('dotenv').config();
 const mongoose = require('mongoose');
-const LoginSignup = require('./Routes/LoginSignup');
-const admin = require('./Routes/admin');
+const LoginSignup = require('./routes/LoginSignup');
+const admin = require('./routes/admin');
 const authMiddleware = require('./Middleware/auth');
 const path = require('path');
 const cors = require('cors');
@@ -27,7 +27,7 @@ main();
 server.use(cors({ origin: '*' }));
 server.use(express.json());
 
-// Serve static files from the public directory
+// // Serve static files from the public directory
 server.use(express.static(path.resolve(__dirname, process.env.PUBLIC_DIR)));
 
 // API routes
@@ -49,8 +49,10 @@ server.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
-// server.listen(process.env.PORT_NUMBER, () => {
-//   console.log('Server Started');
-// });
+server.listen(process.env.PORT_NUMBER, () => {
+  console.log('Server Started');
+});
+
+
 // Export server for Vercel
-module.exports = server;
+// module.exports = server;
